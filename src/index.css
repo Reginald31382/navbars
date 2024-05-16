@@ -1,131 +1,94 @@
-@import url("https://fonts.googleapis.com/css?family=EB+Garamond|Work+Sans:700");
+@import url("https://fonts.googleapis.com/css?family=Helvetica");
 
-:root {
-  --color-light: #fff;
-  --color-dark: #111;
-  --font-primary: "Adobe Garamond Pro", "EB Garamond", Garamond, Georgia,
-    "Times New Roman", serif;
-  --font-secondary: "Work Sans", "Arial Black", Gadget, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  -webkit-font-smoothing: antialiased;
+  font-family: "Helvetica", sans-serif;
+  color: #555;
 }
 
-html {
-  font-size: 10px; /* rem reset */
+#mmeennuu {
+  display: none;
 }
 
-body {
-  background: var(--color-dark);
-  color: var(--color-light);
-  font: 2.6rem/1.55 var(--font-primary);
-}
-
-section {
-  padding: 12.5%;
-  width: 100%;
-}
-
-section:nth-of-type(even) {
-  background: var(--color-light);
-  color: var(--color-dark);
-}
-
-p {
-  margin-bottom: 2.5em;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h2 {
-  font: bold 2.8rem var(--font-secondary);
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 2em;
-}
-
-nav {
-  mix-blend-mode: difference;
-  z-index: 100;
-}
-
-nav ul {
-  position: fixed;
-  top: 60px;
-  right: 5px;
-  height: 100vh;
-  visibility: hidden;
-  pointer-events: none;
-  list-style: none;
-  width: 35px;
-}
-
-nav ul li {
-  font: bold 1.5rem var(--font-secondary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 0.75em 0;
-  writing-mode: vertical-lr;
-}
-
-nav.active ul {
-  visibility: visible;
-  pointer-events: initial;
-  transition-delay: 0.2s;
-}
-
-.nav-icon {
-  appearance: none;
-  background: transparent;
+.menu {
+  display: block;
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  background-color: #f44336;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
   cursor: pointer;
-  display: inline-block;
-  height: 35px;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  transition: background 0.3s;
-  width: 35px;
+  transition: all 0.5s ease-in-out;
 }
 
-.nav-icon span {
-  position: absolute;
-  top: 15px;
-  left: 5px;
-  background: var(--color-light);
+.menu .barry {
+  width: 40px;
+  margin: 35px auto;
+}
+
+.menu .bar {
   display: block;
-  height: 3px;
-  right: 5px;
-  transition: transform 0.3s;
-}
-
-.nav-icon span:before,
-.nav-icon span:after {
   width: 100%;
-  height: 3px;
-  background: var(--color-light);
-  content: "";
+  height: 5px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.menu ul {
+  opacity: 0;
+  display: none;
+  transition: all 0.5s ease-in-out;
+  list-style-type: none;
+  padding: 0;
+  width: 500px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 25px;
+  color: #f44336;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid transparent;
+  border-radius: 5px;
+}
+
+.menu ul li a:hover {
+  border-color: #f44336;
+}
+
+.menu ul li a:target {
+  border-bottom-color: #f44336;
+}
+
+.menu.active {
+  width: 500px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 3px solid #f44336;
+  height: 85px;
+}
+
+.menu.active ul {
   display: block;
-  left: 0;
-  position: absolute;
+  opacity: 1;
 }
 
-.nav-icon span:before {
-  top: -8px;
-}
-
-.nav-icon span:after {
-  bottom: -8px;
-}
-
-nav.active .nav-icon span {
-  transform: rotate(90deg);
+.menu.active .barry {
+  display: none;
 }
