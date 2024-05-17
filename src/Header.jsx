@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./index.css";
 
+const title = ["your business name here."];
+
 const sections = ["home", "about", "blog", "contact"];
 
 const Header = () => {
@@ -26,6 +28,11 @@ const Header = () => {
           ))}
         </ul>
       </nav>
+      <div style={{ textAlign: "center", marginTop: "20rem" }}>
+        {title.map((item) => (
+          <p key={item}>[ {item} ]</p>
+        ))}
+      </div>
       {sections.map((section) => (
         <section id={section} key={section}>
           <h2>{section}</h2>
